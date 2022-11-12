@@ -8,7 +8,7 @@ string[] SetArray(int Length)
     string[] array = new string[Length];
     for (int i = 0; i < array.Length; i++)
     {
-        Console.Write($"Введите строку массива не более {NumberStringLength} символов:\t");
+        System.Console.Write($"Введите строку массива не более {NumberStringLength} символов:\t");
         array[i] = Console.ReadLine();
     }
     return array;
@@ -31,14 +31,6 @@ void SortArray(string[] array, int num)
             System.Console.Write("”\t");
         }
     }
-}
-
-//функция печати массива
-void PrintArray(string[] array)
-{
-    System.Console.Write("Массив:\t");
-    for (int i = 0; i < array.Length; i++)
-        System.Console.Write($"{array[i]} ");
 }
 //функция ввода данных
 int ReadInt(string message)

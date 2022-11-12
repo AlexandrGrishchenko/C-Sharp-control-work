@@ -1,15 +1,17 @@
 ﻿Console.Clear();
 int N = ReadInt("Задайте длину массива : ");
-int NumberStringLength = ReadInt("Задайте длину строки массива : ");
+int NumberStringLength = ReadInt("Задайте ограничение длины строки массива : ");
 
 //функция ввода символов в массив 
 string[] SetArray(int Length)
 {
     string[] array = new string[Length];
+    int count = 1;
     for (int i = 0; i < array.Length; i++)
-    {
-        System.Console.Write($"Введите строку массива не более {NumberStringLength} символов:\t");
+        {
+                System.Console.Write($"Введите {count} строку массива: \t");
         array[i] = Console.ReadLine();
+        count++;
     }
     return array;
 }
@@ -17,7 +19,7 @@ string[] SetArray(int Length)
 //функция сортировки массива по колличеству символов
 void SortArray(string[] array, int num)
 {
-    System.Console.Write("Массив отсортирован:\t");
+    System.Console.Write($"Массив отсортирован не более {NumberStringLength} символами:\t");
     for (int i = 0; i < array.Length; i++)
     {
         //функция подсчета колличества символов в строке 

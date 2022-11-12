@@ -1,0 +1,53 @@
+Console.Clear();
+int N = ReadInt("Задайте длину массива : ");
+int NumberStringLength = ReadInt("Задайте длину строки массива : ");
+
+//функция ввода символов в массив 
+string[] SetArray(int Length)
+{
+    string[] array = new string[Length];
+    for (int i = 0; i < array.Length; i++)
+    {
+        Console.Write($"Введите строку массива не более {NumberStringLength} символов:\t");
+        array[i] = Console.ReadLine();
+    }
+    return array;
+}
+
+//функция сортировки массива по колличеству символов
+void SortArray(string[] array, int num)
+{
+    System.Console.Write("Массив отсортирован:\t");
+    for (int i = 0; i < array.Length; i++)
+    {
+        //функция подсчета колличества символов в строке 
+        bool IsStringNumeric(char charToCheck) => char.IsLetterOrDigit(charToCheck) || char.IsAscii(charToCheck);
+        int count = 0;
+        foreach (var el in array[i]) if (IsStringNumeric(el)) count++;
+        if (num >= count)
+        {
+            System.Console.Write("“");
+            System.Console.Write($"{array[i]}");
+            System.Console.Write("”\t");
+        }
+    }
+}
+
+//функция печати массива
+void PrintArray(string[] array)
+{
+    System.Console.Write("Массив:\t");
+    for (int i = 0; i < array.Length; i++)
+        System.Console.Write($"{array[i]} ");
+}
+//функция ввода данных
+int ReadInt(string message)
+{
+    System.Console.Write(message);
+    return Convert.ToInt32(Console.ReadLine());
+}
+
+System.Console.WriteLine();
+SortArray(SetArray(N),NumberStringLength);
+
+Console.ReadKey();

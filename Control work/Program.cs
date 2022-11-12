@@ -40,6 +40,6 @@ int ReadInt(string message)
 }
 
 System.Console.WriteLine();
-SortArray(SetArray(N), NumberStringLength);
+SortArray(SetArray(N), NumberStringLength);  //Вывод решения на терминал
 
 Console.ReadKey();
